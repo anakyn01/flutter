@@ -1,22 +1,18 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget{
-  @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home: Scaffold(
-appBar: AppBar(
-  title:Text('Scaffold 예제'),
-),
-body: Center(
-  child:Text('안녕하세요'),
-),
-floatingActionButton: FloatingActionButton(
-  onPressed: (){},child: Icon(Icons.add),
-  ),
+void main(){
+  runApp(
+    MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home:Scaffold(
+        body:SizedBox(
+          width:double.infinity,
+          child:Column(
+          mainAxisAlignment: MainAxisAlignment.center,  
+            children: [
+              Text('Code'), Text('Flutter'), Text('버튼에 3줄 쓰기 힘드네..')
+            ],) ,)
       ),
-    );
-  }
+    ),
+  );
 }

@@ -1,41 +1,32 @@
 import 'package:flutter/material.dart';
-
+//row와 컬럼 위젯은 가로와세로로 위젯을 배치하는 역활
+//반면에 스택은 위젯을 겹치는 기능을 제공합니다
 void main(){
-  runApp(FloatingActionButtonExample());
+  runApp(MyApp());
 }
 
-class FloatingActionButtonExample extends StatelessWidget{
+class MyApp extends StatelessWidget{
   @override
-  Widget build(BuildContext context){
-    return MaterialApp(
-      home:Scaffold(
-/*SizedBox(
-  height:200.0,
-  width:200.0,
-  child:Container(color:Colors.red,),
-),*/
-
-        floatingActionButton:FloatingActionButton(
-          onPressed: (){},
-          child:Text('클릭'),
-          ),
-          body:Center(
-child:SizedBox(
-  height:200.0,
-  width:200.0,
-  child:Container(
-decoration: BoxDecoration(
-color:Colors.red,
-border:Border.all(
-  width:16.0, color:Colors.black,
- ),
- borderRadius: BorderRadius.circular(16.0,), 
-),            
-  ),
+  Widget build(BuildContext context) {
+return MaterialApp(
+  home:Scaffold(
+    appBar: AppBar(title:Text('stack')),
+    body:Center(
+      child:Stack(
+        alignment:Alignment.center,
+children:[
+Container(
+  height: 300.0, width:300.0, color:Colors.red,
 ),
-
-          ),
-      ),
-    );
+Container(
+  height: 250.0, width:250.0, color:Colors.yellow,
+),
+Container(
+  height: 200.0, width:200.0, color:Colors.blue,
+),
+],
+      ) ,),
+  ),
+);
   }
 }

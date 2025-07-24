@@ -1,32 +1,37 @@
+/*
+이미지 위젯 : 
+기본 이미지 생성자는 ImageProvider라는 또다른 위젯에서 이미지를 그린다
+image.asset생성자는 앱에 저장된 asset파일로 이미지를 그림
+image.network생성자는 url을 통해서 이미지를 그림..
+image.file 생성자는 파일을 통해서 이미지를 그립니다
+image.memory생성자는 메모리에서 직접 이미지를 그립니다
+*/
 import 'package:flutter/material.dart';
-//row와 컬럼 위젯은 가로와세로로 위젯을 배치하는 역활
-//반면에 스택은 위젯을 겹치는 기능을 제공합니다
+
 void main(){
-  runApp(MyApp());
+runApp(SplashScreen());
 }
 
-class MyApp extends StatelessWidget{
+class SplashScreen extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
 return MaterialApp(
+  debugShowCheckedModeBanner: false,
   home:Scaffold(
-    appBar: AppBar(title:Text('stack')),
-    body:Center(
-      child:Stack(
-        alignment:Alignment.center,
-children:[
-Container(
-  height: 300.0, width:300.0, color:Colors.red,
+    body:Container(
+      decoration: BoxDecoration(
+        color:Colors.amber,
+      ),
+      child:Column( 
+        mainAxisAlignment: MainAxisAlignment.center,
+        children:[
+Image.asset(
+        '../assets/na.jpg',
+        width:200,
 ),
-Container(
-  height: 250.0, width:250.0, color:Colors.yellow,
-),
-Container(
-  height: 200.0, width:200.0, color:Colors.blue,
-),
-],
-      ) ,),
-  ),
+CircularProgressIndicator(),
+      ],
+      ),),),
 );
   }
 }

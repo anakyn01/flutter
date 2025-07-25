@@ -1,3 +1,14 @@
+import 'package:first/screen/home_screen.dart';
+import 'package:flutter/material.dart';
+
+
+void main(){
+  runApp(
+    MaterialApp(
+      home:HomeScreen(),
+    ),
+  );
+}
 /*
 콜백함수 : 일정작업이 완료되면 실행되는 함수
 함수를 정의해두면 바로 실행되지 않고 특정조건이 성립될때 

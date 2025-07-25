@@ -1,8 +1,26 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<uses-permission android:name="android.permission.INTERNET"/>
+<!-- 웹뷰를 실행할 인터넷을 사용해야 해서 인터넷 권한을 추가합니다
+WRITE_EXTERNAL_STORAGE : 앱외부에 파일을 저장할수 있는 권한
+READ_EXTERNAL_STORAGE : 앱외부의 파일을 읽을수 있는 권한
+VIBRATE : 진동을 일으킬수 있는 권한
+ACCESS_FINE_LOCATION : GPS와 네트워크를 모두 사용해서 정확한 현재 위치정보를 가져올수 있는 권한
+ACCESS_BACKGROUND_LOCATION : 앱이 배경에 잇을때 위치 정보를 얻을수 있는 권한
+BILLING : 인앱 결제를 할수있는 권한
+CALL_PHONE : 전화기앱을 사용하지 않고 전화를 할수 있는 권한
+NETWORK_STATE : 네트워크 상태를 가져올수 있는 권한
+RECORD_AUDIO : 음성을 녹음할수 있는 권한
+-->
+<!--현대 웹사이트는 대부분 https로 되어있는데 아직까지 http로 적용하는 것이 잇다
+그럴때는 http를 사용할수 있도록 해제할때 아래를 쓴다
+-->
     <application
         android:label="first"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true"><!--이거임-->
+
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

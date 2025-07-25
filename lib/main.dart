@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 
 
 void main(){
+ WidgetsFlutterBinding.ensureInitialized();
+ //플러터 프레임쿼크가 앱을 실행할 준비가 될때까지 기다림
+
   runApp(
     MaterialApp(
       home:HomeScreen(),
